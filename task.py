@@ -41,7 +41,7 @@ class TaskManager:
         return self.task_heap[0] if self.task_heap else None
 
     def remove_task(self, task_id):
-        """Remove a task by ID (lazy deletion)."""
+        """Remove a task by ID ."""
         if task_id in self.task_map:
             task = self.task_map.pop(task_id)
             # Rebuild heap without the removed task
@@ -73,4 +73,5 @@ if __name__ == "__main__":
     print("")
     print("Completing:", manager.get_next_task())
     print("")
+
     print("Remaining tasks:", manager.list_tasks())
